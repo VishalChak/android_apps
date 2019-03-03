@@ -46,6 +46,7 @@
         android:text="Random"
         android:textSize="14sp"
         android:background="@color/buttonBackground"
+        android:onClick="randomMe"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"

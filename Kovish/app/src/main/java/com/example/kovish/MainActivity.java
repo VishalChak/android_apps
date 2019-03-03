@@ -1,5 +1,6 @@
 package com.example.kovish;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +9,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    private static final String TOTAL_COUNT = "total_count";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +31,15 @@ public class MainActivity extends AppCompatActivity {
 
         Integer count = Integer.parseInt(countString);
         count++;
-
-        //Toast myToast = Toast.makeText(this, String.valueOf(count), Toast.LENGTH_SHORT);
-        //myToast.show();
         showCountTextView.setText(String.valueOf(count));
+    }
+
+    public void randomMe(View view){
+        Intent randomIntent = new Intent(this, SecondActivity.class);
+        TextView showTextView = (TextView) findViewById(R.id.textView);
+        String countString = showTextView.getText().toString();
+        int count = Integer.parseInt(countString);
+        randomIntent.putExtra(TOTAL_COUNT, count);
+        startActivity(randomIntent);
     }
 }
